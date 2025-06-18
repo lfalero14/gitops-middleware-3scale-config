@@ -1,0 +1,56 @@
+apiVersion: apps.3scale.net/v1alpha1
+kind: APIManager
+metadata:
+  name: apimanager
+  annotations:
+    argocd.argoproj.io/sync-options: ServerSideApply=true,Validate=false
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  wildcardDomain: ""
+
+  externalComponents:
+    system:
+      database: true
+
+  apicast:
+    stagingSpec:
+      replicas: 1
+      priorityClassName: openshift-user-critical
+    productionSpec:
+      replicas: 1
+      priorityClassName: openshift-user-critical
+
+  backend:
+    listenerSpec:
+      replicas: 1
+      priorityClassName: openshift-user-critical
+    workerSpec:
+      replicas: 1
+      priorityClassName: openshift-user-critical
+    cronSpec:
+      replicas: 1
+      priorityClassName: openshift-user-critical
+    redisPriorityClassName: openshift-user-critical
+
+  system:
+    appSpec:
+      replicas: 1
+      priorityClassName: openshift-user-critical
+    sidekiqSpec:
+      replicas: 1
+      priorityClassName: openshift-user-critical
+    searchdSpec:
+      priorityClassName: openshift-user-critical
+    redisPriorityClassName: openshift-user-critical
+    memcachedPriorityClassName: system-cluster-critical
+
+  zync:
+    appSpec:
+      replicas: 1
+    queSpec:
+      replicas: 1
+      priorityClassName: openshift-user-critical
+    databasePriorityClassName: openshift-user-critical
+
+  podDisruptionBudget:
+    enabled: true

@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+  - ../../base
+resources:
+  - apimanager/backend-redis-storage.yaml
+  - apimanager/system-redis-storage.yaml
+  - apimanager/system-searchd-manticore.yaml
+  - apimanager/system-storage.yaml
+  - apimanager/system-database-secret.yaml
+  - apimanager/zync-secret.yaml
+
+  - tenant-dev/admin-secret.yaml
+  - tenant-dev/tenant.yaml
+
+  - tenant-uat/admin-secret.yaml
+  - tenant-uat/tenant.yaml
