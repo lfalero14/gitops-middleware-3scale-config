@@ -15,7 +15,7 @@ resources:
   - tenant-dev/tenant.yaml
 
   - tenant-uat/admin-secret.yaml
-  - tenant-uat/tenant-secret.yaml
+  #- tenant-uat/tenant-secret.yaml
   - tenant-uat/tenant.yaml
 patchesStrategicMerge:
   - apimanager/apimanager.yaml
