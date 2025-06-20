@@ -11,9 +11,11 @@ resources:
   - apimanager/zync-secret.yaml
 
   - tenant-dev/admin-secret.yaml
+  - tenant-dev/tenant-secret.yaml
   - tenant-dev/tenant.yaml
 
   - tenant-uat/admin-secret.yaml
+  - tenant-uat/tenant-secret.yaml
   - tenant-uat/tenant.yaml
 patchesStrategicMerge:
   - apimanager/apimanager.yaml
