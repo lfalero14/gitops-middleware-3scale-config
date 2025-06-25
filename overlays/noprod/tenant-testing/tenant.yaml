@@ -1,7 +1,7 @@
 apiVersion: capabilities.3scale.net/v1alpha1
 kind: Tenant
 metadata:
-  name: 3scale-uat
+  name: 3scale-testing
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
     argocd.argoproj.io/sync-wave: "2"
@@ -9,15 +9,14 @@ metadata:
 spec:
   username: admin
   systemMasterUrl: ""
-  email: admin@ecorp.com
-  organizationName: 3scale-uat
+  email: admin@telefonica.com
+  organizationName: 3scale-testing
   masterCredentialsRef:
     name: system-seed
     namespace: 3scale
   passwordCredentialsRef:
-    name: uat-admin-secret
+    name: testing-admin-secret
     namespace: 3scale
   tenantSecretRef:
-    name: uat-tenant-secret #It is created automatically
+    name: testing-tenant-secret #It is created automatically
     namespace: 3scale
-    

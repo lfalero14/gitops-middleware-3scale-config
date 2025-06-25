@@ -9,7 +9,7 @@ metadata:
 spec:
   username: admin
   systemMasterUrl: ""
-  email: admin@ecorp.com
+  email: admin@telefonica.com 
   organizationName: 3scale-dev
   masterCredentialsRef:
     name: system-seed

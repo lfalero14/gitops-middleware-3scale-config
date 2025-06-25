@@ -13,7 +13,7 @@ resources:
   - tenant-dev/admin-secret.yaml
   - tenant-dev/tenant.yaml
 
-  - tenant-uat/admin-secret.yaml
-  - tenant-uat/tenant.yaml
+  - tenant-testing/admin-secret.yaml
+  - tenant-testing/tenant.yaml
 patchesStrategicMerge:
   - apimanager/apimanager.yaml
