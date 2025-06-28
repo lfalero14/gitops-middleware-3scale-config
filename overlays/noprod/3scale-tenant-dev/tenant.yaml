@@ -16,7 +16,7 @@ spec:
     namespace: 3scale
   passwordCredentialsRef:
     name: dev-admin-secret
-    namespace: 3scale
+    namespace: 3scale-tenant-dev
   tenantSecretRef:
     name: dev-tenant-secret #It is created automatically
-    namespace: 3scale
+    namespace: 3scale-tenant-dev

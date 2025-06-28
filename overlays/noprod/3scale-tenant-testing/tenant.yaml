@@ -16,7 +16,7 @@ spec:
     namespace: 3scale
   passwordCredentialsRef:
     name: testing-admin-secret
-    namespace: 3scale
+    namespace: 3scale-tenant-testing
   tenantSecretRef:
     name: testing-tenant-secret #It is created automatically
-    namespace: 3scale
+    namespace: 3scale-tenant-testing
